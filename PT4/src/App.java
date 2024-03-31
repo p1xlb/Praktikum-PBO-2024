@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-
 import Maskapai.pesawat;
 import Maskapai.pilot;
 import Maskapai.mekanik;
@@ -169,10 +168,10 @@ public class App {
                         int flightHour = Integer.parseInt(br.readLine());
                         try {
                             pilotList.add(new pilot(id_pilot, nama_pilot, rating, flightHour));
+                            System.out.println("Data Pilot berhasil ditambahkan");
                         } catch (IllegalArgumentException e) {
                             System.out.println("Error: " + e.getMessage());
                         }
-                        System.out.println("Data Pilot berhasil ditambahkan");
                     } 
 
                     else if(pilih2 == 2){
@@ -256,11 +255,18 @@ public class App {
                         System.out.print("Spesialisasi (Kosongi untuk Umum): ");
                         String spesialisasi = br.readLine();
                         try {
-                            mekanikList.add(new mekanik(id_mekanik, nama_mekanik, rating, spesialisasi));
-                        } catch (IllegalArgumentException e) {
+                            if (spesialisasi.isEmpty()) {
+                                mekanikList.add(new mekanik(id_mekanik, nama_mekanik, rating));
+                                System.out.println("Data Mekanik berhasil ditambahkan dengan spesisalisasi umum");
+                            } 
+                            else {
+                                mekanikList.add(new mekanik(id_mekanik, nama_mekanik, rating, spesialisasi));
+                                System.out.println("Data Mekanik berhasil ditambahkan");
+                            }
+                        }
+                        catch (IllegalArgumentException e) {
                             System.out.println("Error: " + e.getMessage());
                         }
-                        System.out.println("Data Mekanik berhasil ditambahkan");
                     } 
 
                     else if(pilih3 == 2){
@@ -281,13 +287,23 @@ public class App {
                                 String nama_mekanik = br.readLine();
                                 System.out.print("Rating: ");
                                 String rating = br.readLine();
+                                System.out.print("Spesialisasi (Kosongi untuk Umum): ");
+                                String spesialisasi = br.readLine();
                                 try {
-                                    mekanik.setNama(nama_mekanik);
-                                    mekanik.setRating(rating);
+                                    if (spesialisasi.isEmpty()) {
+                                        mekanik.setNama(nama_mekanik);
+                                        mekanik.setRating(rating);
+                                        mekanik.DefSpesialisasi(spesialisasi);
+                                    } 
+                                    else {
+                                        mekanik.setNama(nama_mekanik);
+                                        mekanik.setRating(rating);
+                                        mekanik.setSpesialisasi(spesialisasi);
+                                    }
+                                    System.out.println("Data Mekanik berhasil diubah");
                                 } catch (IllegalArgumentException e) {
                                     System.out.println("Error: " + e.getMessage());
                                 }
-                                System.out.println("Data Mekanik berhasil diubah");
                                 found = true;
                                 break;
                             }

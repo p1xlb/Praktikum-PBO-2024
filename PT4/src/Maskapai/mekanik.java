@@ -3,17 +3,17 @@ package Maskapai;
 public class mekanik extends karyawan {
     private String id_mekanik;
     private String spesialisasi;
-
-    public mekanik(String id_mekanik, String nama, String rating, String spesialisasi) {
-        super(nama, rating);
-        setId_mekanik(id_mekanik);
-        this.spesialisasi = spesialisasi;
-    }
-
+    
     public mekanik(String id_mekanik, String nama, String rating) {
         super(nama, rating);
         setId_mekanik(id_mekanik);
         this.spesialisasi = "General";
+    }
+    
+    public mekanik(String id_mekanik, String nama, String rating, String spesialisasi) {
+        super(nama, rating);
+        setId_mekanik(id_mekanik);
+        this.spesialisasi = spesialisasi;
     }
 
     public void setId_mekanik(String id_mekanik) {
@@ -30,12 +30,16 @@ public class mekanik extends karyawan {
         return id_mekanik;
     }
 
-    public String getSpecialization() {
+    public String getSpesialisasi() {
         return spesialisasi;
     }
 
-    public void setSpecialization(String specialization) {
+    public void setSpesialisasi(String spesialisasi) {
         this.spesialisasi = spesialisasi;
+    }
+
+    public void DefSpesialisasi(String spesialisasi) {
+        this.spesialisasi = "General";
     }
 
     @Override
