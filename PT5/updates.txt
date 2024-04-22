@@ -1,0 +1,4 @@
+1. Penambahan atribut FlightHour di class pilot
+2. Penambahan atribut Spesialisasi di class mekanik
+3. Jika Spesialisasi tidak dimasukkan pada tahap memasukkan data mekanik, akan diberi value default ("Overloading")
+4. Penambahan method untuk lihat pilot dan mekanik pada class nya masing-masing ("Overriding")
