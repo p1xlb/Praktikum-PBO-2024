@@ -1,0 +1,2 @@
+1. Class Interface Sertifiable
+2. Penambahan fungsi untuk Validasi Rating
